@@ -1,0 +1,6 @@
+[submodule "componente-vendas"]
+	path = componente-vendas
+	url = https://github.com/EnityBlackHawk/backend_bd2.git
+[submodule "componente-produtos"]
+	path = componente-produtos
+	url = https://github.com/EnityBlackHawk/componente-produtos.git

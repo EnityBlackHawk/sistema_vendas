@@ -4,6 +4,7 @@ services:
     extends:
       file: ./componente-produtos/docker-compose.yaml
       service: cmp_produtos
+    image: entityblackhawk/cmp-produtos:latest
 
   db_produtos:
     extends:
@@ -14,6 +15,8 @@ services:
     extends:
       file: ./componente-vendas/docker-compose.yaml
       service: cmp_vendas
+    environment:
+      - PRODUCT_API_URL=component-produtos:8081
     expose:
       - "8080:8080"
 
