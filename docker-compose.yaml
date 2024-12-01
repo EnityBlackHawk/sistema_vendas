@@ -8,6 +8,12 @@ services:
     networks:
         - network-produtos
         - network-app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://cmp-produtos:8080/product/getAll"]
+      interval: 5s
+      timeout: 2s
+      retries: 3
+      start_interval: 10s
 
   db-produtos:
     extends:
@@ -22,11 +28,14 @@ services:
       service: cmp-vendas
     environment:
       - PRODUCT_API_URL=http://cmp-produtos:8080
-    expose:
+    ports:
       - "8080:8080"
     networks:
         - network-vendas
         - network-app
+    depends_on:
+      cmp-produtos:
+        condition: service_healthy
 
   db-vendas:
     extends:

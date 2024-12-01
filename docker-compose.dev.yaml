@@ -1,0 +1,34 @@
+version: "3.8"
+services:
+  cmp-produtos:
+    extends:
+      file: ./docker-compose.yaml
+      service: cmp-produtos
+    ports:
+      - "8081:8080"
+
+  db-produtos:
+    extends:
+      service: db-produtos
+      file: ./docker-compose.yaml
+
+  cmp-vendas:
+    extends:
+      file: ./docker-compose.yaml
+      service: cmp-vendas
+    ports:
+      - "8080:8080"
+  db-vendas:
+    extends:
+      service: db-vendas
+      file: ./docker-compose.yaml
+
+networks:
+  network-app:
+    driver: bridge
+
+  network-vendas:
+    driver: bridge
+
+  network-produtos:
+    driver: bridge
