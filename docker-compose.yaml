@@ -1,36 +1,46 @@
 version: "3.8"
 services:
-  cmp_produtos:
+  cmp-produtos:
     extends:
       file: ./componente-produtos/docker-compose.yaml
-      service: cmp_produtos
+      service: cmp-produtos
     image: entityblackhawk/cmp-produtos:latest
+    networks:
+        - network-produtos
+        - network-app
 
-  db_produtos:
+  db-produtos:
     extends:
-      service: db_produtos
+      service: db-produtos
       file: ./componente-produtos/docker-compose.yaml
+    networks:
+      - network-produtos
 
-  cmp_vendas:
+  cmp-vendas:
     extends:
       file: ./componente-vendas/docker-compose.yaml
-      service: cmp_vendas
+      service: cmp-vendas
     environment:
-      - PRODUCT_API_URL=component-produtos:8081
+      - PRODUCT_API_URL=http://cmp-produtos:8080
     expose:
       - "8080:8080"
+    networks:
+        - network-vendas
+        - network-app
 
-  db_vendas:
+  db-vendas:
     extends:
-      service: db_vendas
+      service: db-vendas
       file: ./componente-vendas/docker-compose.yaml
+    networks:
+      - network-vendas
 
 networks:
-  network_app:
+  network-app:
     driver: bridge
 
-  network_vendas:
+  network-vendas:
     driver: bridge
 
-  network_produtos:
+  network-produtos:
     driver: bridge
