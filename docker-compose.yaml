@@ -44,6 +44,26 @@ services:
     networks:
       - network-vendas
 
+  cmp-ecommerce:
+    extends:
+      file: ./componente-ecommerce/docker-compose.yaml
+      service: cmp-ecommerce
+    environment:
+      - PRODUCT_API_URL=http://cmp-produtos:8080
+    networks:
+        - network-ecommerce
+        - network-app
+    depends_on:
+      cmp-produtos:
+        condition: service_healthy
+
+  db-ecommerce:
+    extends:
+      service: db-ecommerce
+      file: ./componente-ecommerce/docker-compose.yaml
+    networks:
+        - network-ecommerce
+
 networks:
   network-app:
     driver: bridge
@@ -52,4 +72,7 @@ networks:
     driver: bridge
 
   network-produtos:
+    driver: bridge
+
+  network-ecommerce:
     driver: bridge
