@@ -2,6 +2,6 @@
   "projects": {
     "componente-vendas": "https://github.com/EnityBlackHawk/backend_bd2.git",
     "componente-produtos": "https://github.com/EnityBlackHawk/componente-produtos.git",
-    "comonente-ecommerce": "https://github.com/EnityBlackHawk/componente-ecommerce.git"
+    "componente-ecommerce": "https://github.com/EnityBlackHawk/componente-ecommerce.git"
   }
 }

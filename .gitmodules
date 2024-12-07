@@ -4,6 +4,6 @@
 [submodule "componente-produtos"]
 	path = componente-produtos
 	url = https://github.com/EnityBlackHawk/componente-produtos.git
-[submodule "comonente-ecommerce"]
-	path = comonente-ecommerce
+[submodule "componente-ecommerce"]
+	path = componente-ecommerce
 	url = https://github.com/EnityBlackHawk/componente-ecommerce.git
