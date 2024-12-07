@@ -7,3 +7,8 @@ git submodule update --init --recursive
 sudo docker compose build
 sudo docker compose up -d
 ```
+
+### Running exposing ports:
+```bash
+sudo docker compose -f docker-compose.dev.yaml up [...services] -d
+```
