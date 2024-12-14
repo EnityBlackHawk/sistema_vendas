@@ -1,0 +1,101 @@
+{
+  "permissions": [
+    {
+      "configure": ".*",
+      "read": ".*",
+      "user": "client",
+      "vhost": "/",
+      "write": ".*"
+    },
+    {
+      "configure": ".*",
+      "read": ".*",
+      "user": "admin",
+      "vhost": "/",
+      "write": ".*"
+    }
+  ],
+  "bindings": [
+    {
+      "arguments": {},
+      "destination": "pag-req-cred",
+      "destination_type": "queue",
+      "routing_key": "pag.req.credit",
+      "source": "pag-exchange",
+      "vhost": "/"
+    },
+    {
+      "arguments": {},
+      "destination": "pag-res",
+      "destination_type": "queue",
+      "routing_key": "pag.res",
+      "source": "pag-exchange",
+      "vhost": "/"
+    }
+  ],
+  "queues": [
+    {
+      "arguments": { "x-queue-type": "classic" },
+      "auto_delete": false,
+      "durable": true,
+      "name": "pag-req-cred",
+      "type": "classic",
+      "vhost": "/"
+    },
+    {
+      "arguments": { "x-queue-type": "classic" },
+      "auto_delete": false,
+      "durable": true,
+      "name": "pag-res",
+      "type": "classic",
+      "vhost": "/"
+    }
+  ],
+  "parameters": [],
+  "policies": [],
+  "rabbitmq_version": "4.0.4",
+  "rabbit_version": "4.0.4",
+  "exchanges": [
+    {
+      "arguments": {},
+      "auto_delete": false,
+      "durable": true,
+      "name": "pag-exchange",
+      "type": "direct",
+      "vhost": "/"
+    }
+  ],
+  "users": [
+    {
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "limits": {},
+      "name": "client",
+      "password_hash": "+kHlxcyitPlSQ0ufdu8zAICWdHlRKTD79CTjw6lbslwiInLs",
+      "tags": []
+    },
+    {
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "limits": {},
+      "name": "admin",
+      "password_hash": "OeL3D837zgqGhFzjQXRbNVhS5S/DG5yzdGHXRnMIdG10xWRy",
+      "tags": ["administrator"]
+    }
+  ],
+  "vhosts": [
+    {
+      "limits": [],
+      "metadata": { "description": "Default virtual host", "tags": [] },
+      "name": "/"
+    }
+  ],
+  "global_parameters": [{ "name": "cluster_tags", "value": [] }],
+  "topic_permissions": [
+    {
+      "exchange": "pag-exchange",
+      "read": ".*",
+      "user": "client",
+      "vhost": "/",
+      "write": ".*"
+    }
+  ]
+}
