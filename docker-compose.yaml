@@ -49,7 +49,7 @@ services:
       service: cmp-ecommerce
     environment:
       - PRODUCT_API_URL=http://cmp-produtos:8080
-      - RABBITMQ_URL=http://rabbitmq:5672
+      - RABBITMQ_URL=rabbitmq:5672
     networks:
       - network-ecommerce
       - network-app
@@ -63,6 +63,23 @@ services:
       file: ./componente-ecommerce/docker-compose.yaml
     networks:
       - network-ecommerce
+
+  cmp-pagamentos:
+    extends:
+      service: cmp-pagamentos
+      file: ./componente-pagamentos/docker-compose.yaml
+    networks:
+      - network-pagamentos
+      - network-app
+    environment:
+      - RABBITMQ_URL=http://rabbitmq:5672
+
+  db-pagamentos:
+    extends:
+      service: db-pagamentos
+      file: ./componente-pagamentos/docker-compose.yaml
+    networks:
+      - network-pagamentos
 
   rabbitmq:
     image: rabbitmq:management
@@ -91,4 +108,7 @@ networks:
     driver: bridge
 
   network-ecommerce:
+    driver: bridge
+
+  network-pagamentos:
     driver: bridge

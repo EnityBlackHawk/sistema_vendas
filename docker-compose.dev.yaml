@@ -41,6 +41,20 @@ services:
     ports:
       - "5434:5432"
 
+  cmp-pagamentos:
+    extends:
+      service: cmp-pagamentos
+      file: ./docker-compose.yaml
+    ports:
+      - "8084:8080"
+
+  db-pagamentos:
+    extends:
+      service: db-pagamentos
+      file: ./docker-compose.yaml
+    ports:
+      - "27017:27017"
+
   rabbitmq:
     extends:
       service: rabbitmq
@@ -59,4 +73,7 @@ networks:
     driver: bridge
 
   network-ecommerce:
+    driver: bridge
+
+  network-pagamentos:
     driver: bridge
