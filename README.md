@@ -1,5 +1,8 @@
 # sistema_vendas
 
+## Arquitetura:
+<img src="api_arq.jpg">
+
 ### Running with local build:
 ```bash
 git clone https://github.com/EnityBlackHawk/sistema_vendas.git

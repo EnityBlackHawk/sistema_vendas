@@ -10,3 +10,6 @@
 [submodule "componente-pagamentos"]
 	path = componente-pagamentos
 	url = https://github.com/EnityBlackHawk/componente-pagamentos.git
+[submodule "componente-gateway"]
+	path = componente-gateway
+	url = https://github.com/EnityBlackHawk/componente-gateway.git

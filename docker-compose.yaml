@@ -11,7 +11,7 @@ services:
       test: ["CMD", "curl", "-f", "http://cmp-produtos:8080/product/getAll"]
       interval: 5s
       timeout: 2s
-      retries: 3
+      retries: 10
       start_interval: 10s
 
   db-produtos:
@@ -27,8 +27,6 @@ services:
       service: cmp-vendas
     environment:
       - PRODUCT_API_URL=http://cmp-produtos:8080
-    ports:
-      - "8080:8080"
     networks:
       - network-vendas
       - network-app
@@ -72,7 +70,7 @@ services:
       - network-pagamentos
       - network-app
     environment:
-      - RABBITMQ_URL=http://rabbitmq:5672
+      - RABBITMQ_URL=rabbitmq:5672
 
   db-pagamentos:
     extends:
@@ -96,6 +94,20 @@ services:
 
     networks:
       - network-app
+
+  gateway:
+    build: componente-gateway
+    container_name: gateway
+    environment:
+      - CMP_PRODUTOS_URI=http://cmp-produtos:8080
+      - CMP_VENDAS_URI=http://cmp-vendas:8080
+      - CMP_ECOMMERCE_URI=http://cmp-ecommerce:8080
+      - CMP_PAGAMENTOS_URI=http://cmp-pagamentos:8080
+    ports:
+        - "8080:8080"
+
+    networks:
+        - network-app
 
 networks:
   network-app:

@@ -19,7 +19,7 @@ services:
       file: ./docker-compose.yaml
       service: cmp-vendas
     ports:
-      - "8080:8080"
+      - "8082:8080"
   db-vendas:
     extends:
       service: db-vendas
