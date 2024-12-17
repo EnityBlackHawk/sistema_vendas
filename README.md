@@ -1,5 +1,9 @@
 # sistema_vendas
 
+### Alunos:
+- Luan Felipe Marmentini
+- Luca Aguiar
+
 ## Arquitetura:
 <img src="api_arq.jpg">
 
