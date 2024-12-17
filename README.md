@@ -19,6 +19,7 @@
 ### 1. Clonar repositório e submódulos:
 ```bash
 git clone https://github.com/EnityBlackHawk/sistema_vendas.git
+cd sistema_vendas
 git submodule update --init --recursive
 ```
 

@@ -62,6 +62,13 @@ services:
     ports:
       - "5672:5672" # Porta para conexão de aplicações
 
+  gateway:
+    extends:
+      service: gateway
+      file: ./docker-compose.yaml
+    ports:
+      - "8080:8080"
+
 networks:
   network-app:
     driver: bridge
