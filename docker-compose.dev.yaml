@@ -55,6 +55,21 @@ services:
     ports:
       - "27017:27017"
 
+
+  cmp-auth:
+    extends:
+      service: cmp-auth
+      file: ./docker-compose.yaml
+    ports:
+      - "8085:8080"
+
+  db-auth:
+    extends:
+      service: db-auth
+      file: ./docker-compose.yaml
+    ports:
+      - "27018:27017"
+
   rabbitmq:
     extends:
       service: rabbitmq
@@ -83,4 +98,7 @@ networks:
     driver: bridge
 
   network-pagamentos:
+    driver: bridge
+
+  network-auth:
     driver: bridge

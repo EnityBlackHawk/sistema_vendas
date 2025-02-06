@@ -13,3 +13,6 @@
 [submodule "componente-gateway"]
 	path = componente-gateway
 	url = https://github.com/EnityBlackHawk/componente-gateway.git
+[submodule "componente-auth"]
+	path = componente-auth
+	url = https://github.com/EnityBlackHawk/componente-auth.git

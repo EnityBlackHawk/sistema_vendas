@@ -79,6 +79,25 @@ services:
     networks:
       - network-pagamentos
 
+  cmp-auth:
+    extends:
+      service: cmp-auth
+      file: ./componente-auth/docker-compose.yaml
+
+    environment:
+      - RABBITMQ_URL=rabbitmq:5672
+
+    networks:
+      - network-auth
+      - network-app
+
+  db-auth:
+    extends:
+      service: db-auth
+      file: ./componente-auth/docker-compose.yaml
+    networks:
+      - network-auth
+
   rabbitmq:
     image: rabbitmq:management
     ports:
@@ -103,6 +122,7 @@ services:
       - CMP_VENDAS_URI=http://cmp-vendas:8080
       - CMP_ECOMMERCE_URI=http://cmp-ecommerce:8080
       - CMP_PAGAMENTOS_URI=http://cmp-pagamentos:8080
+      - CMP_AUTH_URI=http://cmp-auth:8080
     ports:
         - "8080:8080"
 
@@ -123,4 +143,7 @@ networks:
     driver: bridge
 
   network-pagamentos:
+    driver: bridge
+
+  network-auth:
     driver: bridge
