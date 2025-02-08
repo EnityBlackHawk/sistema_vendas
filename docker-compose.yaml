@@ -47,6 +47,7 @@ services:
       service: cmp-ecommerce
     environment:
       - PRODUCT_API_URL=http://cmp-produtos:8080
+      - AUTH_API_URL=http://cmp-auth:8080
       - RABBITMQ_URL=rabbitmq:5672
     networks:
       - network-ecommerce
