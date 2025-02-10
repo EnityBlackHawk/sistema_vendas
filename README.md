@@ -16,7 +16,7 @@
 | Componente-ecommerce  | [x] Criar usuarios <br> [x] Editar usuarios <br> [x] Remover usuarios <br> [x] Listar usuarios <br> [x] Criar vendas <br> [x] Atualizar status da venda <br> [ ] Permissão de usuarios |
 | Componente-pagamentos | [x] Criar pagamentos <br> [x] Consultar pagamentos                                                                                                                                     |
 |  Componente-gateway   | [x] Roteamento de requisições                                                                                                                                                          |
-|    Componente-auth    | [ ] Autenticação de usuários                                                                                                                                                           |
+|    Componente-auth    | [x] Autenticação de usuários                                                                                                                                                           |
 
 ## Executar projeto:
 
