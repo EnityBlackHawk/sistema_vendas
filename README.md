@@ -13,7 +13,7 @@
 
 |      Componente       | Funcionalidades                                                                                                                                                                        |
 | :-------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|  Componente-produtos  | [x] Listar produtos <br> [x] Adicionar produtos <br> [x] Atualizar produtos                                                                                                            |
+|  Componente-produtos  | [x] Listar produtos <br> [x] Adicionar produtos <br> [x] Atualizar produtos <br> [x] Criar fornecedores                                                                                |
 |   Componente-vendas   | [x] Listar vendas <br> [x] Criar vendas <br> [x] Criar funcionarios <br> [x] Editar funcionarios <br> [x] Remover funcionarios                                                         |
 | Componente-ecommerce  | [x] Criar usuarios <br> [x] Editar usuarios <br> [x] Remover usuarios <br> [x] Listar usuarios <br> [x] Criar vendas <br> [x] Atualizar status da venda <br> [x] Permissão de usuarios |
 | Componente-pagamentos | [x] Criar pagamentos <br> [x] Consultar pagamentos                                                                                                                                     |
