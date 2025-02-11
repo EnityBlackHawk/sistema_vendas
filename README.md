@@ -28,7 +28,7 @@
 | Vendas     | Java      | Maven      | Spring Web, Lombok, Model Mapper, Swagger, OpenFeign | Postgres       | -          |
 | Pagamentos | Java      | Maven      | Spring Web, Lombok, Model Mapper, Swagger            | MongoDB        | -          |
 | E-commerce | Java      | Gradle     | Spring Web, Lombok, Model Mapper, Swagger, OpenFeign | Postgres       | RabbitMQ   |
-| Auth       | Kotlin    | Gradle     | Spring Security, Spring Web, OpenFeign, Swagger      | MongoDB        | RabbitMQ   |
+| Auth       | Kotlin    | Gradle     | Spring Security, Spring Web, Swagger                 | MongoDB        | RabbitMQ   |
 
 ## Executar projeto:
 
