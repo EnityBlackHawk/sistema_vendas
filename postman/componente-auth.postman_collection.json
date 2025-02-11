@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "39d41c44-0d41-4fd8-9a9c-47234abac1e6",
+		"name": "componente-auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23793588"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"luan@gmail.com\",\n    \"password\" : \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cmp-auth}}/login",
+					"host": [
+						"{{cmp-auth}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjb20uc2lzdGVtYSIsInN1YiI6IjAyZTM4ODA3LTJiZmQtNDg0Mi04YWM0LWNhZTdlZjYxYmUyOSIsImV4cCI6MTczODk3NDkxNywiaWF0IjoxNzM4OTc0NjE3LCJzY29wZSI6IkFETUlOIn0.RHBQ5fggfmPKFcxj74IcBsPxLd9ppt-u5zKXW1Z2WIZFcs54G1zXQ6s6JAbnZbR8G7uElP8OdYEMZvOLGdjKnMornQnRCw71Hfn8C0-qLcxdSJc_IpPO59FH_xwcS8IRqUiGTGBveZ_Gk9RL99jGaCF7IkUNZL7hV0UjdpJ-MKN-nV6dwNj2DvnNmxQuh9GgyuAUmuEHw17oHyXIZzERvv8Xs_zgUtoSmVBrxxUs4MsilVTkomSIunLVvd3DnM8BXnnFc7ldt_LJWlk0JRyLBis4Gkvt9y6KELU9_g9nq-9L1n4mUfEEHnU-5c3yxoNepWH8xdWomKXfvmfFgigLFA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{cmp-auth}}/authenticate",
+					"host": [
+						"{{cmp-auth}}"
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

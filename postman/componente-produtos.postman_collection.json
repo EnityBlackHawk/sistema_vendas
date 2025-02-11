@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "fd039316-2e1c-4bce-b8e0-b438990d662d",
+		"name": "componente-produtos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23793588"
+	},
+	"item": [
+		{
+			"name": "Add Produto",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"NVIDIA GeForce RTX 4090\",\n    \"value\": 9000.00,\n    \"quantity\": 20,\n    \"supplier\": {\n      \"id\": 1\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cmp-produtos-host}}/product/add",
+					"host": [
+						"{{cmp-produtos-host}}"
+					],
+					"path": [
+						"product",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Produtos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{cmp-produtos-host}}/product/getAll",
+					"host": [
+						"{{cmp-produtos-host}}"
+					],
+					"path": [
+						"product",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Supplier",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"description\": \"GIGABYTE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cmp-produtos-host}}/product/supplier/add",
+					"host": [
+						"{{cmp-produtos-host}}"
+					],
+					"path": [
+						"product",
+						"supplier",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"code\": 1,\n        \"description\": \"Intel I9-14900K\",\n        \"value\": 3000.0,\n        \"quantity\": 50,\n        \"supplier\": {\n            \"id\": 1,\n            \"description\": \"Intel\"\n        }\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cmp-produtos-host}}/product/1",
+					"host": [
+						"{{cmp-produtos-host}}"
+					],
+					"path": [
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Many Products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"codes\" : [ 1, 2, 3 ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cmp-produtos-host}}/product/findMany",
+					"host": [
+						"{{cmp-produtos-host}}"
+					],
+					"path": [
+						"product",
+						"findMany"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

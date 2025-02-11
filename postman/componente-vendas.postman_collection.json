@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "97d61f1d-39c9-49d0-8952-a27a984a42ae",
+		"name": "componente-vendas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23793588"
+	},
+	"item": [
+		{
+			"name": "Produto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{cmp-vendas-host}}/products",
+					"host": [
+						"{{cmp-vendas-host}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Venda",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"employee\": {\n    \"id\": 1\n  },\n  \"items\": [\n    {\n      \"code\": 1,\n      \"quantity\": 1,\n      \"product\": {\n        \"code\": 1\n      }\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cmp-vendas-host}}/api/sale/add",
+					"host": [
+						"{{cmp-vendas-host}}"
+					],
+					"path": [
+						"api",
+						"sale",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vendas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cmp-vendas-host}}/api/sale/getAll",
+					"host": [
+						"{{cmp-vendas-host}}"
+					],
+					"path": [
+						"api",
+						"sale",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{cmp-vendas-host}}/api/employee/getProdutosUrl",
+					"host": [
+						"{{cmp-vendas-host}}"
+					],
+					"path": [
+						"api",
+						"employee",
+						"getProdutosUrl"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

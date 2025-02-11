@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "dcd9ff75-e3e0-455a-80c1-dbd35e69e7de",
+		"name": "componente-pagamentos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23793588"
+	},
+	"item": [
+		{
+			"name": "Get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{cmp-pagamentos}}/payments/67ab45eb34812419caa0f759",
+					"host": [
+						"{{cmp-pagamentos}}"
+					],
+					"path": [
+						"payments",
+						"67ab45eb34812419caa0f759"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by orderId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{cmp-pagamentos}}/payments/order/1f70510e-4ecc-4a72-8429-80422711215a",
+					"host": [
+						"{{cmp-pagamentos}}"
+					],
+					"path": [
+						"payments",
+						"order",
+						"1f70510e-4ecc-4a72-8429-80422711215a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
